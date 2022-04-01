@@ -1,0 +1,74 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>Button Magic</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1>  <label id="lbl1"> kem</label>  </h1>
+        </div>
+    </div>
+
+
+    <div class="col-md-4">
+        <button id="print" value="Print Text">Print Text </button><br /><br />
+        <button id="Bold" value="Bold">Bold</button><br /><br />
+        <button id="Italic" value="Italic">Italic</button><br /><br />
+        <button id="Underline" value="Underline">Underline</button><br /><br />
+        <button id="Reset" value="Reset" type="reset">Reset</button><br /><br />
+
+    </div>
+</div>
+@section Scripts{
+
+
+    <script>
+        var lbl = document.getElementById('lbl1');
+        var btnprint = document.getElementById('print');
+        var btnbold = document.getElementById('Bold');
+        var btnitalic = document.getElementById('Italic');
+        var btnunderline = document.getElementById('Underline');
+        var btnreset = document.getElementById('Reset');
+
+
+        btnprint.addEventListener('click', function () {
+            console.log("print btn clicked")
+            lbl.innerHTML = "Hello World"
+            lbl.style.fontWeight = 'normal';
+        });
+
+        btnbold.addEventListener('click', function () {
+            console.log('clicked');
+            lbl.innerHTML = "Hello World!"
+            lbl.style.fontWeight = 'bold';
+            lbl.style.fontStyle = '';
+            lbl.style.textDecoration = '';
+        });
+
+        btnitalic.addEventListener('click', function () {
+            lbl.innerHTML = "Hello World"
+            lbl.style.fontStyle = 'italic';
+            lbl.style.fontWeight = '';
+            lbl.style.textDecoration = '';
+        });
+
+        btnunderline.addEventListener('click', function () {
+            console.log('clicked');
+            lbl.innerHTML = "Hello World";
+            lbl.style.textDecoration = 'underline';
+            lbl.style.fontWeight = '';
+            lbl.style.fontStyle = '';
+        });
+
+        btnreset.addEventListener('click', function () {
+            lbl.innerHTML = "";
+            lbl.style.textDecoration = '';
+            lbl.style.fontStyle = '';
+            lbl.style.fontWeight = '';
+        });
+    </script>
+
+
+
+}
